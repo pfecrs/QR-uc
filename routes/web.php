@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\EtudiantController;
@@ -46,10 +47,16 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
 });
 
+Route::get('home', [HomeController::class, 'home'])->name('showHome');
+Route::post('home', [HomeController::class, 'form'])->name('handleform');
 
 
-// Route::get('/etd', function () {
-//     return view('Backoffice.etudiants.liste');
+
+
+
+
+// Route::get('/home', function () {
+//     return view('Frontoffice.profs.home');
 // });
 
 

@@ -64,6 +64,7 @@
                             <td>
                                     <form action="{{route('qrEtudiant')}}" method="POST" >
                                         @csrf
+                                        <input type="hidden" value="{{$etudiant->id}}" name="id" >
                                         <input type="submit" style="color: white" value="Afficher QR ">
                                     </form>
                                 

@@ -126,9 +126,11 @@ class EtudiantController extends Controller
         
         // dd($request);
         $id=$request->id;
+        //dd($id);
+
         $etudiant= Etudiant::where('id', $id)->first();
         $app_url=env('APP_URL');
-        $QrCode=QrCode::size(450)->generate("$app_url/$id");
+        $QrCode=QrCode::size(450)->generate("$app_url/$etudiant->id");
         return view('Backoffice.etudiants.qrcode', compact('QrCode'));
     } 
 }
