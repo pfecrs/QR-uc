@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Note;
+use App\Models\Classe;
+use App\Models\Etudiant;
+use App\Models\Professeur;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -13,7 +17,39 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $notes = Note::all();
+        $etudiants=array();
+        $professeurs=array();
+        $classes=array();
+        foreach($notes as $note){
+            $id=$note->id_etudiant;
+            $etudiant= Etudiant::where('id', $id)->first();
+            //dd($etudiant);
+            
+            array_push($etudiants,$etudiant);
+           
+        }
+        foreach($notes as $note){
+            $id=$note->id_professeur;
+            $professeur= Professeur::where('id', $id)->first();
+            //dd($etudiant);
+            
+            array_push($professeurs,$professeur);
+           
+        }
+        foreach($notes as $note){
+            $id=$note->id_classe;
+            $classe= Classe::where('id', $id)->first();
+            //dd($etudiant);
+            
+            array_push($classes,$classe);
+           
+        }
+        //dd($classes);
+         //dd($professeurs);
+         //$etudiants= Etudiant::where('id', $id)->all();
+         //dd($etudiants);
+        return view('Backoffice.note.liste', compact('notes','professeurs','etudiants','classes'));
     }
 
     /**

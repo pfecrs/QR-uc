@@ -16,7 +16,7 @@ class CreateNotesTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->float('valeur')->nullable();
-            $table->integer('id_matiere')->unsigned();
+            $table->string('matiere', 255)->nullable();
             $table->integer('id_etudiant')->unsigned();
             $table->integer('id_professeur')->unsigned();
             $table->integer('id_classe')->unsigned();

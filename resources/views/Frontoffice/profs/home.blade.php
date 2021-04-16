@@ -32,7 +32,7 @@
                                     <div class="field">
                                         <label>Note</label>
                                         <div class="control has-icon">
-                                            <input type="text" class="input"  name="note" placeholder="note">
+                                            <input type="number" class="input"  name="note" placeholder="note">
                                             <div class="form-icon">
                                                 <i data-feather="map-pin"></i>
                                             </div>

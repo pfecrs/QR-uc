@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Note;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,12 +14,22 @@ class HomeController extends Controller
     }
     public function form(Request $request){
 
-       $matiere=$request->matiere;
-       $note=$request->note;
+        $note = new Note;
+        
+        $note->valeur = $request->note;
+        $note->matiere = $request->matiere;
+        $note->id_etudiant =1;
+        $note->id_professeur = 1;
+        $note->id_classe =1;
+        
+        $note->save();
 
+           return redirect()->back();
+        // return redirect()->route('showListenote')
+        //                 ->with('success','note créé avec succès');
+    }
+        
        
 
-       dd($matiere,$note);
-
-    }
+    
 }

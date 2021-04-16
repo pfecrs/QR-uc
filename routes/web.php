@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\EtudiantController;
@@ -44,6 +45,9 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::get('classe/edit', [ClasseController::class, 'edit'])->name('editClasse');
     Route::post('classe/edit', [ClasseController::class, 'update'])->name('updateClasse');
     Route::post('classe', [ClasseController::class, 'destroy'])->name('deleteClasse');
+
+
+    Route::get('notes', [NoteController::class, 'index'])->name('showListeClasses');
 
 });
 
