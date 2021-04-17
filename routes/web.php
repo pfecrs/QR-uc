@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\ClasseController;
+use App\Http\Controllers\DevoirController;
 use App\Http\Controllers\EtudiantController;
 
 /*
@@ -47,7 +48,20 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::post('classe', [ClasseController::class, 'destroy'])->name('deleteClasse');
 
 
-    Route::get('notes', [NoteController::class, 'index'])->name('showListeClasses');
+    // Route::get('notes', [NoteController::class, 'index'])->name('showListenotes');
+    
+
+
+
+    Route::get('devoirs', [DevoirController::class, 'index'])->name('showListeDevoirs');
+    Route::get('devoir/add', [DevoirController::class, 'create'])->name('addDevoir');
+    Route::post('devoir/add', [DevoirController::class, 'store'])->name('storeDevoir');
+    Route::get('devoir/edit', [DevoirController::class, 'edit'])->name('editDevoir');
+    Route::post('devoir/edit', [DevoirController::class, 'update'])->name('updateDevoir');
+    Route::post('devoir', [DevoirController::class, 'destroy'])->name('deleteDevoir');
+    Route::post('devoir/qr', [DevoirController::class, 'showqr'])->name('qrDevoir');
+
+
 
 });
 
