@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Devoir;
+use App\Models\Etudiant;
 use App\Models\Professeur;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -125,15 +126,15 @@ class ProfController extends Controller
         $static_link = Str::after($url, $app_url);
        // dd($static_link);
 
-        $devoir=Devoir::where('id', $static_link)->first();
+        // $devoir=Devoir::where('id', $static_link)->first();
         //dd($devoir);
-
+        $etudiant=Etudiant::where('id', $static_link)->first();
         $prof=Session::get('prof');
         // dd($prof);
-
-        if ($devoir !== null && $prof !== null){
+        $values=Session::get('inputs');
+        if ($etudiant !== null && $prof !== null){
             
-            return view('Frontoffice.profs.home', compact('devoir'));
+            return view('Frontoffice.profs.home', compact('etudiant','values'));
             
         }
         else{
@@ -147,13 +148,22 @@ class ProfController extends Controller
 
         $login=$request->login;
         $password=$request->password;
+        $matiere=$request->matiere;
+        $niveau=$request->niveau;
+
+
+        $inputs=array($matiere,$niveau);
+        Session::put('inputs', $inputs);
+        //dd($inputs);
         $prof = Professeur::where('login', '=', $login)
         ->where('password', $password)
         ->first();
         // dd($prof);
         if($prof !== null){
             Session::put('prof', $prof);
-            return redirect()->route('showHome');     
+            $values=Session::get('inputs');
+           //dd($values);
+            return redirect()->route('showHome',$values);     
         }
         else{
             return redirect()->back();
@@ -168,12 +178,22 @@ class ProfController extends Controller
     {
         $id=$request->id;
 
-        $devoir= Devoir::find($id);
+        $prof=Session::get('prof');
+        //dd($prof);
+        //$id_prof=0;
+
+
+        $etudiant=Etudiant::where('id', $id)->first();
+        //$professeur=Professeur::where('id',$id_prof)->first();
+        $devoir= new Devoir;
+        $devoir->matiere = $request->matiere;
+        $devoir->type = $request->type;
         $devoir->note = $request->note;
-        
+        $devoir->num_cin_etudiant= $etudiant->num_cin;
+        $devoir->num_cin_correcteur=$prof->num_cin;
         $devoir->save();
 
-        return redirect()->back();;
+        return redirect()->route('showHome');
     }
 
     

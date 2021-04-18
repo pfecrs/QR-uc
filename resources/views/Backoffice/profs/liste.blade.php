@@ -52,7 +52,7 @@
                                 <th>Nom</th>
                                 <th>Prenom</th>
                                 
-                                <th class="has-text-centered">num CIN</th>
+                                {{-- <th class="has-text-centered">num CIN</th> --}}
                                 <th>login</th>
                                 <th>mot de passe </th>
                                 
@@ -76,17 +76,18 @@
                             <td>{{$prof->nom}}</td>
                             <td>{{$prof->prenom}}</td>
                            
-                            <td>{{$prof->num_cin}}</td>
+                            {{-- <td>{{$prof->num_cin}}</td> --}}
                             <td>{{$prof->login}}</td>
                             <td>{{$prof->password}}</td>
                    
                             <td> 
-
+                                <div class="is-flex">
                                 <form action="{{route('deleteProfesseur')}}" method="post">
                                     @csrf
-
-                                    <input type="hidden" value="{{$prof->id}}" name="id" >
-                                <input class="button bg-danger h-button" type="submit" value="delete">
+                                  
+                                        <input type="hidden" value="{{$prof->id}}" name="id" >
+                                        <input class="button bg-danger h-button" type="submit" value="delete">
+                       
                                 {{-- <button class="button bg-danger h-button">
                                     <span class="icon is-small "">
                                             <i class="fas fa-times"></i>
@@ -110,7 +111,7 @@
                                 </button> --}}
                             </form>
                         
-                        
+                        </div>
                         
                           </td>
                           

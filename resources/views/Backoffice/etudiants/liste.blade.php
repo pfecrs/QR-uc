@@ -62,11 +62,11 @@
                                 
                             
                             <td>
-                                    {{-- <form action="{{route('qrEtudiant')}}" method="POST" >
+                                    <form action="{{route('qrEtudiant')}}" target="_blank" method="POST" >
                                         @csrf
                                         <input type="hidden" value="{{$etudiant->id}}" name="id" >
-                                        <input type="submit" style="color: white" value="Afficher QR ">
-                                    </form> --}}
+                                        <input type="submit" class="button bg-primary h-button" style="color: white"  value="Afficher QR ">
+                                    </form>
                                 
                             </td>
                             <td>{{$etudiant->nom}}</td>
@@ -75,7 +75,7 @@
                             <td>{{$etudiant->num_cin}}</td>
                             <td>{{$etudiant->num_inscription}}</td>
                             <td> 
-
+                                <div class="is-flex">
                                 <form action="{{route('deleteEtudiant')}}" method="post">
                                     @csrf
 
@@ -104,7 +104,7 @@
                                 </button> --}}
                             </form>
                         
-                        
+                                </div>
                         
                           </td>
                           

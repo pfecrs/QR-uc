@@ -49,13 +49,13 @@
                                     </div>
                                 </th>
                                 <th>matiere</th>
-                                <th>type</th>
-                                <th>Date de devoir</th>
+                                <th>niveau</th>
+                                {{-- <th>Date de devoir</th> --}}
                                 <th class="has-text-centered">num CIN Etudiant</th>
                                 {{-- <th class="has-text-centered">num CIN correcteur</th> --}}
-                                {{-- <th>date de correction </th> --}}
-                                <th>note</th>
                                 
+                                <th>note</th>
+                                <th>date de correction </th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -64,19 +64,20 @@
                                 
                             
                             <td>
-                                    <form action="{{route('qrDevoir')}}" target="_blank" method="POST" >
+                                    {{-- <form action="{{route('qrDevoir')}}" target="_blank" method="POST" >
                                         @csrf
                                         <input type="hidden" value="{{$devoir->id}}" name="id" >
                                         <input type="submit" class="button bg-primary h-button" style="color: white" value="Afficher QR ">
-                                    </form>
+                                    </form> --}}
                                 
                             </td>
                             <td>{{$devoir->matiere}}</td>
                             <td>{{$devoir->type}}</td>
-                            <td>{{$devoir->date_devoir}}</td>
                             <td>{{$devoir->num_cin_etudiant}}</td>
+                            {{-- <td>{{$devoir->num_cin_correcteur}}</td> --}}
                             <td>{{$devoir->note}}</td>
-                            <td> 
+                            <td>{{$devoir->created_at}}</td>
+                            <td>  <div class="is-flex">
 
                                 <form action="{{route('deleteDevoir')}}" method="post">
                                     @csrf
@@ -106,7 +107,7 @@
                                 </button> --}}
                             </form>
                         
-                        
+                        </div>
                         
                           </td>
                           

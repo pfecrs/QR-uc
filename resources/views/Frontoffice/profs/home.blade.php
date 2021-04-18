@@ -10,13 +10,13 @@
 <div class="page-content-inner">
    
     <h1 class=" has-text-centered text-primary">s'il vous plaît Scanner le QR code Du Devoir</h1>
-@isset ($devoir)
+@isset ($etudiant)
     
 
     <!--Form Layout 3-->
     <form action="{{route('insertNote')}}" method="post" >
         @csrf
-        <input type="hidden" name="id" value="{{$devoir->id}}" >
+        <input type="hidden" name="id" value="{{$etudiant->id}}" >
         <div class="form-layout is-separate">
             <div class="form-outer">
                 <div class="form-body">
@@ -28,7 +28,7 @@
                                     <div class="field">
                                         <label>Matiere</label>
                                         <div class="control has-icon">
-                                            <input type="text" name="matiere" value="{{$devoir->matiere}}" class="input" disabled placeholder="matiere">
+                                            <input type="text" name="matiere"  class="input" value="{{ $values['0'] }}"  placeholder="matiere">
                                             <div class="form-icon">
                                                 <i data-feather="hash"></i>
                                             </div>
@@ -39,7 +39,7 @@
                                     <div class="field">
                                         <label>type</label>
                                         <div class="control has-icon">
-                                            <input type="text" name="matiere"  value="{{$devoir->type}}" class="input" disabled placeholder="matiere">
+                                            <input type="text" name="type" value="{{ $values['1'] }}"   class="input" placeholder="type">
                                             <div class="form-icon">
                                                 <i data-feather="hash"></i>
                                             </div>
@@ -47,24 +47,24 @@
                                     </div>
                                 </div>
                             
-                                <div class="column is-12">
+                                {{-- <div class="column is-12">
                                     <div class="field">
                                         <label>date de devoir</label>
                                         <div class="control has-icon">
-                                            <input type="text" name="matiere"  value="{{$devoir->date_devoir}}" class="input" disabled placeholder="matiere">
+                                            <input type="text" name="matiere"  value="{{$devoir->date_devoir}}" class="input"  placeholder="matiere">
                                             <div class="form-icon">
                                                 <i data-feather="hash"></i>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="column is-12">
                                     <div class="field">
                                         <label>Note</label>
                                         <div class="control has-icon">
-                                            <input type="number" class="input"  value="{{$devoir->note}}"  name="note" placeholder="note">
+                                            <input type="number" class="input"     name="note" placeholder="note">
                                             <div class="form-icon">
-                                                <i data-feather="map-pin"></i>
+                                                <i data-feather="hash"></i>
                                             </div>
                                         </div>
                                     </div>

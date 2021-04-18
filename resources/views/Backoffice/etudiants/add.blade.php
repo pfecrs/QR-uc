@@ -20,7 +20,7 @@
                                     </span>
                                 <span>Cancel</span>
                             </a>
-                            <button id="save-button" class="button h-button is-primary is-raised">Schedule</button>
+                            {{-- <button id="save-button" class="button h-button is-primary is-raised">Schedule</button> --}}
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                             <div class="field">
                                 <label>Nom</label>
                                 <div class="control has-icon">
-                                    <input type="text" class="input" name="nom" placeholder="Nom">
+                                    <input type="text" class="input" name="nom" required placeholder="Nom">
                                     <div class="form-icon">
                                         <i data-feather="user"></i>
                                     </div>
@@ -50,7 +50,7 @@
                             <div class="field">
                                 <label>Prénom</label>
                                 <div class="control has-icon">
-                                    <input type="text" class="input" name="prenom" placeholder="Prenom">
+                                    <input type="text" class="input" name="prenom" required placeholder="Prenom">
                                     <div class="form-icon">
                                         <i data-feather="user"></i>
                                     </div>
@@ -61,7 +61,7 @@
                             <div class="field">
                                 <label>Date de naissance</label>
                                 <div class="control has-icon">
-                                    <input type="date" class="input" name="date_naissance" placeholder="">
+                                    <input type="date" class="input" name="date_naissance" required placeholder="">
                                     <div class="form-icon">
                                         <i data-feather="calendar"></i>
                                     </div>
@@ -72,7 +72,7 @@
                             <div class="field">
                                 <label>Numéro CIN</label>
                                 <div class="control has-icon">
-                                    <input type="number" class="input" name="num_cin" placeholder="">
+                                    <input type="number" class="input" name="num_cin" required placeholder="">
                                     <div class="form-icon">
                                         <i data-feather="hash"></i>
                                     </div>
@@ -83,7 +83,7 @@
                             <div class="field">
                                 <label>Numéro d'inscription</label>
                                 <div class="control has-icon">
-                                    <input type="number" class="input" name="num_inscription" placeholder="">
+                                    <input type="number" class="input" name="num_inscription" required placeholder="">
                                     <div class="form-icon">
                                         <i data-feather="hash"></i>
                                     </div>

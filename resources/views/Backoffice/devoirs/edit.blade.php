@@ -60,11 +60,11 @@
                         </div>
                         <div class="column is-12">
                             <div class="field">
-                                <label>date du devoir</label>
+                                <label>note</label>
                                 <div class="control has-icon">
-                                    <input type="date" class="input" name="date_devoir" value="{{$devoir->date_devoir}}" placeholder="Date du devoir">
+                                    <input type="number" class="input" name="note" value="{{$devoir->note}}" placeholder="Date du devoir">
                                     <div class="form-icon">
-                                        <i data-feather="calendar"></i>
+                                        <i data-feather="hash"></i>
                                     </div>
                                 </div>
                             </div>

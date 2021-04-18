@@ -209,11 +209,11 @@
                             <i data-feather="users"></i>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{route('showListeClasses')}}" id="elements-sidebar-menu-mobile">
                             <i data-feather="box"></i>
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="{{route('showListeDevoirs')}}" id="components-sidebar-menu-mobile">
                             <i data-feather="archive"></i>
@@ -289,11 +289,11 @@
                             <i class="sidebar-svg" data-feather="users"></i>
                         </a>
                     </li> <!-- Bounties -->
-                    <li>
+                    {{-- <li>
                         <a href="{{route('showListeClasses')}}" id="elements-sidebar-menu" data-content="Elements">
                             <i class="sidebar-svg" data-feather="box"></i>
                         </a>
-                    </li> <!-- Bugs -->
+                    </li> <!-- Bugs --> --}}
                     <li>
                         <a href="{{route('showListeDevoirs')}}" id="components-sidebar-menu" data-content="Components">
                             <i class="sidebar-svg" data-feather="archive"></i>
@@ -619,6 +619,15 @@
                 </div>
             </div>
 
+        </div>
+        <div class="forgot-link has-text-right">
+            <div class="content has-text-right ">
+                <p>
+                  2021 © Design and Development by : <strong><a href="https://thorsys.co">Thor System</a></strong> &nbsp; &nbsp; &nbsp;
+             
+                </p>
+               
+              </div>
         </div>
         <!-- Concatenated plugins -->
         <script src={{asset('Backoffice/assets/js/app.js')}}></script>

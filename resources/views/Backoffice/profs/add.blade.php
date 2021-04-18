@@ -20,7 +20,7 @@
                                     </span>
                                 <span>Cancel</span>
                             </a>
-                            <button id="save-button" class="button h-button is-primary is-raised">Schedule</button>
+                            {{-- <button id="save-button" class="button h-button is-primary is-raised">Schedule</button> --}}
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                             <div class="field">
                                 <label>Nom</label>
                                 <div class="control has-icon">
-                                    <input type="text" class="input" name="nom" placeholder="Nom">
+                                    <input type="text" class="input" name="nom" required  placeholder="Nom">
                                     <div class="form-icon">
                                         <i data-feather="user"></i>
                                     </div>
@@ -50,7 +50,7 @@
                             <div class="field">
                                 <label>Prénom</label>
                                 <div class="control has-icon">
-                                    <input type="text" class="input" name="prenom" placeholder="Prenom">
+                                    <input type="text" class="input" name="prenom" required placeholder="Prenom">
                                     <div class="form-icon">
                                         <i data-feather="user"></i>
                                     </div>
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         
-                        <div class="column is-12">
+                        {{-- <div class="column is-12">
                             <div class="field">
                                 <label>Numéro CIN</label>
                                 <div class="control has-icon">
@@ -68,13 +68,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="column is-12">
                             <div class="field">
                                 <label>login</label>
                                 <div class="control has-icon">
-                                    <input type="text" class="input" name="login"   placeholder="login">
+                                    <input type="text" class="input" name="login" required   placeholder="login">
                                     <div class="form-icon">
                                         <i data-feather="hash"></i>
                                     </div>
@@ -86,7 +86,7 @@
                             <div class="field">
                                 <label>mot de passe</label>
                                 <div class="control has-icon">
-                                    <input type="text" class="input" name="password"   placeholder="Mot de passe">
+                                    <input type="text" class="input" name="password" required   placeholder="Mot de passe">
                                     <div class="form-icon">
                                         <i data-feather="hash"></i>
                                     </div>

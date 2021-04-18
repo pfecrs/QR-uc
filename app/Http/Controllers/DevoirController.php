@@ -93,7 +93,7 @@ class DevoirController extends Controller
 
         $devoir->matiere = $request->matiere;
         $devoir->type = $request->type;
-        $devoir->date_devoir = $request->date_devoir;
+        $devoir->note = $request->note;
         $devoir->num_cin_etudiant = $request->num_cin;
         $devoir->num_cin_correcteur = 0;
         

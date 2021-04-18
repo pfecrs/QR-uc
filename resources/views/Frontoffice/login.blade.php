@@ -73,7 +73,7 @@
                                     <!-- Input -->
                                     <div class="field">
                                         <div class="control has-icon">
-                                            <input class="input" type="text" name="login"  placeholder="Username">
+                                            <input class="input" type="text" name="login" required placeholder="Username">
                                             <span class="form-icon">
                                                     <i data-feather="user"></i>
                                                 </span>
@@ -82,9 +82,25 @@
                                     <!-- Input -->
                                     <div class="field">
                                         <div class="control has-icon">
-                                            <input class="input" type="password" name="password" placeholder="Password">
+                                            <input class="input" type="password" name="password" required placeholder="Password">
                                             <span class="form-icon">
                                                     <i data-feather="lock"></i>
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control has-icon">
+                                            <input class="input" type="text" name="matiere" required  placeholder="Matiere">
+                                            <span class="form-icon">
+                                                    <i data-feather="hash"></i>
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control has-icon">
+                                            <input class="input" type="number" name="niveau" required  placeholder="Niveau">
+                                            <span class="form-icon">
+                                                    <i data-feather="hash"></i>
                                                 </span>
                                         </div>
                                     </div>
@@ -108,18 +124,23 @@
                                 </div>
                             </form>
                         </div>
-
+<br>
                         <div class="forgot-link has-text-centered">
-                            <a>Forgot Password?</a>
+                            <div class="content has-text-centered ">
+                                <p>
+                                  2021 © Design and Development by : <strong><a href="https://thorsys.co">Thor System</a></strong> 
+                                </p>
+                              </div>
                         </div>
 
                     </div>
 
                 </div>
-
+          
             </div>
+    
         </div>
-
+       
         <!-- Concatenated plugins -->
         <script src={{asset('Backoffice/assets/js/app.js')}}></script>
 

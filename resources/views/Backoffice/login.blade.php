@@ -127,9 +127,19 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
 
             </div>
+        </div>
+        <div class="forgot-link has-text-right">
+            <div class="content has-text-right ">
+                <p>
+                  2021 © Design and Development by : <strong><a href="https://thorsys.co">Thor System</a></strong> &nbsp; &nbsp; &nbsp;
+             
+                </p>
+               
+              </div>
         </div>
 
         <!-- Concatenated plugins -->
