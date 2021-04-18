@@ -3,11 +3,20 @@
 @section('content')
 
 
+    
+
+
+
 <div class="page-content-inner">
+   
+    <h1 class=" has-text-centered text-primary">s'il vous plaît Scanner le QR code Du Devoir</h1>
+@isset ($devoir)
+    
 
     <!--Form Layout 3-->
-    <form action="{{route('handleform')}}" method="post" >
+    <form action="{{route('insertNote')}}" method="post" >
         @csrf
+        <input type="hidden" name="id" value="{{$devoir->id}}" >
         <div class="form-layout is-separate">
             <div class="form-outer">
                 <div class="form-body">
@@ -15,13 +24,34 @@
                         <div class="form-section-inner has-padding-bottom">
                             <h3 class="has-text-centered">Resultat</h3>
                             <div class="columns is-multiline">
-                    
-                            
-                                <div class="column is-12">
+                                <div class="column is-6">
                                     <div class="field">
                                         <label>Matiere</label>
                                         <div class="control has-icon">
-                                            <input type="text" name="matiere" class="input" placeholder="matiere">
+                                            <input type="text" name="matiere" value="{{$devoir->matiere}}" class="input" disabled placeholder="matiere">
+                                            <div class="form-icon">
+                                                <i data-feather="hash"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="field">
+                                        <label>type</label>
+                                        <div class="control has-icon">
+                                            <input type="text" name="matiere"  value="{{$devoir->type}}" class="input" disabled placeholder="matiere">
+                                            <div class="form-icon">
+                                                <i data-feather="hash"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="column is-12">
+                                    <div class="field">
+                                        <label>date de devoir</label>
+                                        <div class="control has-icon">
+                                            <input type="text" name="matiere"  value="{{$devoir->date_devoir}}" class="input" disabled placeholder="matiere">
                                             <div class="form-icon">
                                                 <i data-feather="hash"></i>
                                             </div>
@@ -32,7 +62,7 @@
                                     <div class="field">
                                         <label>Note</label>
                                         <div class="control has-icon">
-                                            <input type="number" class="input"  name="note" placeholder="note">
+                                            <input type="number" class="input"  value="{{$devoir->note}}"  name="note" placeholder="note">
                                             <div class="form-icon">
                                                 <i data-feather="map-pin"></i>
                                             </div>
@@ -42,6 +72,13 @@
 
 
                                 <input class="button button-wrap h-button is-primary is-bold is-raised is-fullwidth" type="submit" value="Confirmer">
+    </form>
+
+    @endisset
+    <br><br>
+    <form action="{{route('handlelogout')}}" method="post">
+        @csrf
+        <input class="button button-wrap h-button is-danger is-bold is-raised is-fullwidth" type="submit" value="logout">
     </form>
                             {{-- <div class="column is-6">
                                 <div class="field">

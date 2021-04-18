@@ -64,10 +64,10 @@
                                 
                             
                             <td>
-                                    <form action="{{route('qrDevoir')}}" method="POST" >
+                                    <form action="{{route('qrDevoir')}}" target="_blank" method="POST" >
                                         @csrf
                                         <input type="hidden" value="{{$devoir->id}}" name="id" >
-                                        <input type="submit" class="is-primary" value="Afficher QR ">
+                                        <input type="submit" class="button bg-primary h-button" style="color: white" value="Afficher QR ">
                                     </form>
                                 
                             </td>

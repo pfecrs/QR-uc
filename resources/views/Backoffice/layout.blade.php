@@ -11,7 +11,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title> QR université centrale</title>
-    <link rel="icon" type="image/png" href={{asset('Backoffice/assets/img/favicon.png')}} />
+    <link rel="icon" type="image/png" href={{asset('img/header.png')}} />
 
     <!--Core CSS -->
     <link rel="stylesheet" href={{asset('Backoffice/assets/css/app.css')}}>
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="inner has-slimscroll">
 
-                                    <ul class="notification-list">
+                                    {{-- <ul class="notification-list">
                                         <li>
                                             <a class="notification-item">
                                                 <div class="img-left">
@@ -111,7 +111,7 @@
                                                 </div>
                                             </a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -215,18 +215,18 @@
                         </a>
                     </li>
                     <li>
-                        <a href="components-hub.html" id="components-sidebar-menu-mobile">
-                            <i data-feather="cpu"></i>
+                        <a href="{{route('showListeDevoirs')}}" id="components-sidebar-menu-mobile">
+                            <i data-feather="archive"></i>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="messaging-chat.html" id="open-messages-mobile">
                             <i data-feather="message-circle"></i>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
 
-                <ul class="bottom-icon-side-menu">
+                {{-- <ul class="bottom-icon-side-menu">
                     <li>
                         <a href="javascript:" class="right-panel-trigger" data-panel="search-panel">
                             <i data-feather="search"></i>
@@ -237,7 +237,7 @@
                             <i data-feather="settings"></i>
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
         <div id="circular-menu" class="circular-menu">
@@ -255,7 +255,7 @@
                     </label>
                 </div>
                 <a class="menu-item is-flex right-panel-trigger" data-panel="languages-panel">
-                    <img src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                    <img src={{asset('Backoffice/assets/img/icons/flags/france.svg')}} alt="">
                 </a>
                 <a class="menu-item is-flex">
                     <i data-feather="bell"></i>
@@ -285,7 +285,7 @@
                         </a>
                     </li> <!-- Layouts -->
                     <li>
-                        <a href="{{route('showListeEtudiant')}}" id="layouts-sidebar-menu" data-content="Layouts">
+                        <a href="{{route('showListeEtudiant')}}" >
                             <i class="sidebar-svg" data-feather="users"></i>
                         </a>
                     </li> <!-- Bounties -->
@@ -295,19 +295,19 @@
                         </a>
                     </li> <!-- Bugs -->
                     <li>
-                        <a href="components-hub.html" id="components-sidebar-menu" data-content="Components">
-                            <i class="sidebar-svg" data-feather="cpu"></i>
+                        <a href="{{route('showListeDevoirs')}}" id="components-sidebar-menu" data-content="Components">
+                            <i class="sidebar-svg" data-feather="archive"></i>
                         </a>
                     </li> <!-- Messaging -->
-                    <li id="messages-menu">
+                    {{-- <li id="messages-menu">
                         <a href="admin-messaging-chat.html" id="open-messages" data-content="Messaging">
                             <i class="sidebar-svg" data-feather="message-circle"></i>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
 
                 <!-- User account -->
-                <ul class="bottom-menu">
+                {{-- <ul class="bottom-menu">
                     <!-- Notifications -->
                     <li class="right-panel-trigger" data-panel="search-panel">
                         <a href="javascript:void(0);" id="open-search" data-content="Search"><i class="sidebar-svg" data-feather="search"></i></a>
@@ -397,10 +397,10 @@
 
 
 
-                </ul>
+                </ul> --}}
             </div>
         </div>
-        <div id="languages-panel" class="right-panel-wrapper is-languages">
+        {{-- <div id="languages-panel" class="right-panel-wrapper is-languages">
             <div class="panel-overlay"></div>
 
             <div class="right-panel">
@@ -416,7 +416,7 @@
                             <div class="language-option">
                                 <input type="radio" name="language_selection" checked>
                                 <div class="language-option-inner">
-                                    <img src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                    <img src="{{asset('Backoffice/assets/img/icons/flags/france.svg')}} alt="">
                                     <div class="indicator">
                                         <i data-feather="check"></i>
                                     </div>
@@ -491,7 +491,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
      
         <!-- Content Wrapper -->
         <div class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu" data-mobile-item="#home-sidebar-menu-mobile">
@@ -527,7 +527,7 @@
                             </div>
 
                             <a class="toolbar-link right-panel-trigger" data-panel="languages-panel">
-                                <img src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                <img src={{asset('Backoffice/assets/img/icons/flags/france.svg')}} alt="">
                             </a>
 
                             <div class="toolbar-notifications is-hidden-mobile">
@@ -547,7 +547,7 @@
                                                 </div>
                                             </div>
                                             <ul class="notification-list">
-                                                <li>
+                                                {{-- <li>
                                                     <a class="notification-item">
                                                         <div class="img-left">
                                                             <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" />
@@ -590,17 +590,25 @@
                                                             <p class="time">3 hours ago</p>
                                                         </div>
                                                     </a>
-                                                </li>
+                                                </li> --}}
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <form action="{{route('handleAdminLogout')}}" method="post">
+                                @csrf
+                                
+                            
+                                {{-- <a class="toolbar-link right-panel-trigger"  data-panel="activity-panel">--}}
+                                    {{-- <i data-feather="log-out"> </i> --}}
 
-                            <a class="toolbar-link right-panel-trigger" data-panel="activity-panel">
-                                <i data-feather="grid"></i>
-                            </a>
+                                <input  type="submit" class="button bg-danger h-button" style="color: white" value="Se déconnecter">
+
+                                    
+                                {{-- </a>  --}}
+                            </form>
                         </div>
                     </div>
 

@@ -53,6 +53,8 @@
                                 <th>Prenom</th>
                                 
                                 <th class="has-text-centered">num CIN</th>
+                                <th>login</th>
+                                <th>mot de passe </th>
                                 
                                 
                                 <th>Actions</th>
@@ -62,17 +64,21 @@
                             @foreach ($profs as $prof)
                                 
                             
-                            <td><button class="button bg-primary h-button">
+                            <td>
+                                {{-- <button class="button bg-primary h-button">
                                 <span class="icon is-small "">
                                         <i class="fas fa-box"></i>
                                     </span>
                                     <a href="#" class="" style="  text-decoration: none;"><span style="color: white">Afficher</span></a>
                                 
-                            </button></td>
+                            </button> --}}
+                             </td>
                             <td>{{$prof->nom}}</td>
                             <td>{{$prof->prenom}}</td>
                            
                             <td>{{$prof->num_cin}}</td>
+                            <td>{{$prof->login}}</td>
+                            <td>{{$prof->password}}</td>
                    
                             <td> 
 

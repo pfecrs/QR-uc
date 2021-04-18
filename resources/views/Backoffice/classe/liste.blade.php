@@ -61,13 +61,15 @@
                             @foreach ($classes as $classe)
                                 
                             
-                            <td><button class="button bg-primary h-button">
+                            <td>
+                                {{-- <button class="button bg-primary h-button">
                                 <span class="icon is-small "">
                                         <i class="fas fa-box"></i>
                                     </span>
                                     <a href="#" class="" style="  text-decoration: none;"><span style="color: white">Afficher</span></a>
                                 
-                            </button></td>
+                                </button> --}}
+                            </td>
                             <td>{{$classe->nom}}</td>
                           
                             <td>{{$classe->departement}}</td>

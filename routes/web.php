@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\admin;
+use App\Http\Middleware\professeur;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoteController;
@@ -20,10 +22,18 @@ use App\Http\Controllers\EtudiantController;
 */
 
 Route::get('/', function () {
-    return view('Backoffice.layout');
-});
+    return view('Frontoffice.login');
+})->name('loginProf');
 
-Route::namespace('Admin')->prefix('admin')->group(function () {
+
+Route::get('admin', [HomeController::class, 'adminlogin'])->name('showAdminLogin');
+Route::post('admin', [HomeController::class, 'handleAdminLogin'])->name('handleAdminLogin');
+Route::post('admin/logout', [HomeController::class, 'handleAdminLogout'])->name('handleAdminLogout');
+
+
+
+
+Route::namespace('Admin')->middleware(admin::class)->prefix('admin')->group(function () {
     Route::get('etudiants', [EtudiantController::class, 'index'])->name('showListeEtudiant');
     Route::get('etudiant/add', [EtudiantController::class, 'create'])->name('addEtudiant');
     Route::post('etudiant/add', [EtudiantController::class, 'store'])->name('storeEtudiant');
@@ -65,13 +75,14 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
 });
 
-Route::get('home', [HomeController::class, 'home'])->name('showHome');
+Route::get('home', [HomeController::class, 'home'])->name('showHome')->middleware(professeur::class);
 Route::post('home', [HomeController::class, 'form'])->name('handleform');
+Route::post('home/logout', [ProfController::class, 'handlelogout'])->name('handlelogout');
+Route::post('/', [ProfController::class, 'handlelogin'])->name('handlelogin');
 
+Route::fallback( [ProfController::class, 'scanQr'])->name("scanQr")->name('loginProf');
 
-
-
-
+Route::post('home/i', [ProfController::class, 'insertNote'])->name('insertNote');
 
 // Route::get('/home', function () {
 //     return view('Frontoffice.profs.home');

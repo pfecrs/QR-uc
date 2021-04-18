@@ -1,5 +1,4 @@
-@extends('Backoffice.layout')
-@section('content')
+
 
 <div class="text-center" style="margin-left:32em; margin-top:10em ">
     <div class="alert alert-success">
@@ -13,4 +12,3 @@
 </div>
 
 
-@endsection

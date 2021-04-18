@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
+use App\Models\admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
     public function home(){
 
+        
         return view('Frontoffice.profs.home');
 
     }
@@ -29,6 +33,36 @@ class HomeController extends Controller
         //                 ->with('success','note créé avec succès');
     }
         
+    public function adminlogin()
+    {
+        return view('Backoffice.login');
+    }
+
+    public function handleAdminLogin(Request $request)
+    {
+        $login=$request->login;
+        $password=$request->password;
+        $admin = admin::where('login', '=', $login)
+        ->where('password', $password)
+        ->first();
+        // dd($prof);
+        if($admin !== null){
+            Session::put('admin', $admin);
+            return redirect()->route('showListeDevoirs');     
+        }
+        else{
+            return redirect()->back();
+        }
+
+    }
+
+    public function handleAdminLogout(){
+        if (session()->has('admin')){
+            session()->flush();
+            return redirect()->route('showAdminLogin');
+        }
+        return redirect()->route('showAdminLogin');
+     }
        
 
     

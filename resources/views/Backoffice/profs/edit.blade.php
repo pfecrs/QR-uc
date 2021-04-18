@@ -69,6 +69,28 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="column is-12">
+                            <div class="field">
+                                <label>login</label>
+                                <div class="control has-icon">
+                                    <input type="text" class="input" name="login"  value="{{$professeur->login}}" placeholder="">
+                                    <div class="form-icon">
+                                        <i data-feather="hash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-12">
+                            <div class="field">
+                                <label>mot de passe</label>
+                                <div class="control has-icon">
+                                    <input type="text" class="input" name="password"  value="{{$professeur->password}}" placeholder="">
+                                    <div class="form-icon">
+                                        <i data-feather="hash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     

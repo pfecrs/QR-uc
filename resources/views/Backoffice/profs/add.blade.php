@@ -69,6 +69,30 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="column is-12">
+                            <div class="field">
+                                <label>login</label>
+                                <div class="control has-icon">
+                                    <input type="text" class="input" name="login"   placeholder="login">
+                                    <div class="form-icon">
+                                        <i data-feather="hash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-12">
+                            <div class="field">
+                                <label>mot de passe</label>
+                                <div class="control has-icon">
+                                    <input type="text" class="input" name="password"   placeholder="Mot de passe">
+                                    <div class="form-icon">
+                                        <i data-feather="hash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
               
                     </div>
                     
